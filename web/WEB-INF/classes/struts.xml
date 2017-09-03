@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="user" extends="struts-default">
+        <action name="login" class="cn.shgx.action.UserAction" method="login">
+            <result name="success" type="redirectAction">list</result>
+            <result name="login">/login.jsp</result>
+        </action>
+        <action name="list" class="cn.shgx.action.UserAction" method="list">
+            <result name="success">/list.jsp</result>
+            <result name="error">/login.jsp</result>
+        </action>
+        <action name="toUpdate" class="cn.shgx.action.UserAction" method="toUpdate">
+            <result name="success">/update.jsp</result>
+            <result name="error">/login.jsp</result>
+        </action>
+        <action name="update" class="cn.shgx.action.UserAction" method="update">
+            <result name="success" type="redirectAction">list</result>
+            <result name="error">/error.jsp</result>
+        </action>
+        <action name="add" class="cn.shgx.action.UserAction" method="add">
+            <result name="success" type="redirectAction">list</result>
+            <result name="error">/error.jsp</result>
+        </action>
+        <action name="toDelete" class="cn.shgx.action.UserAction" method="delete">
+            <result name="success" type="redirectAction">list</result>
+            <result name="error">/error.jsp</result>
+        </action>
+
+    </package>
+</struts>
